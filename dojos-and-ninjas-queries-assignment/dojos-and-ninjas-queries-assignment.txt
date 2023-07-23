@@ -1,0 +1,40 @@
+//   Query: Create 3 new dojos
+INSERT INTO dojos (name)
+VALUES("Deep Space Nine Dojo"),("Enterprise Dojo"),("Voyager Dojo");
+// Query: Delete the 3 dojos you just created
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM dojos;
+// Query: Create 3 more dojos
+INSERT INTO dojos (name)
+VALUES("Jane The Virgin Dojo"),("Fleabag Dojo"),("Beef Dojo");
+// Query: Create 3 ninjas that belong to the first dojo
+INSERT INTO ninjas (first_name, last_name, dojo_id)
+VALUES("Jane", "Villanueva", 7),("Xiomara", "Villanueva", 7),("Alba", "Villanueva", 7);
+// Query: Create 3 ninjas that belong to the second dojo
+INSERT INTO ninjas (first_name, last_name, dojo_id)
+VALUES("Fleabag", "Phoebe", 8),("Claire", "Sister", 8),("The", "Priest",8); 
+// Query: Create 3 ninjas that belong to the third dojo
+INSERT INTO ninjas (first_name, last_name, dojo_id)
+VALUES("Amy", "Lau", 9),("Danny", "Cho", 9),("Paul", "Cho",9);
+// Query: Retrieve all the ninjas from the first dojo
+SELECT * FROM ninjas
+WHERE dojo_id = 7;
+// Query: Retrieve all the ninjas from the last dojo
+SELECT * FROM ninjas
+WHERE dojo_id = 8;
+// Query: Retrieve the last ninja's dojo
+SELECT dojo_id
+FROM ninjas
+ORDER BY dojo_id DESC LIMIT 1;
+// Query: Use a JOIN to retrieve the ninja with id 6 as well as the data from its dojo. Be sure to do this in one query using a join statement.
+SELECT *
+FROM ninjas
+JOIN dojos
+ON dojos.id = ninjas.dojo_id
+WHERE ninjas.id = 6;
+// Query: Use a JOIN to retrieve all the ninjas as well as that ninja's dojo, note, you will see repeated data on dojos as a dojo can have many ninjas!
+SELECT *
+FROM ninjas
+JOIN dojos
+ON dojos.id = ninjas.dojo_id;
+// Submit your .txt file that contains all the queries you ran in the shell

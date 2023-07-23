@@ -1,0 +1,44 @@
+SELECT * FROM users;
+
+INSERT INTO users (first_name, last_name, email)
+VALUES ("Kitty", "Cat","meow@meowmail.com"),("Kitty", "Cat","meow@meowmail.com"),("Kitty", "Cat","meow@meowmail.com");
+
+SELECT * FROM users;
+
+UPDATE users SET first_name = "Dorothy", last_name = "Pretty", email = "pretty@mail.com"
+WHERE id = 2;
+
+SELECT * FROM users;
+
+UPDATE users SET first_name = "Forest", last_name = "Tree", email = "green@greenmail.com"
+WHERE id = 3;
+
+SELECT * FROM users;
+
+SELECT first_name, last_name, email
+FROM users
+WHERE email = "green@greenmail.com";
+
+SELECT id, first_name, last_name, email
+FROM users
+WHERE id = 3;
+
+UPDATE users
+SET last_name = "Pancakes"
+WHERE id = 3;
+
+SELECT * FROM users;
+
+DELETE FROM users
+WHERE id = 2;
+
+SELECT * FROM users;
+
+SELECT * 
+FROM users
+ORDER BY first_name;
+
+SELECT * 
+FROM users
+ORDER BY first_name DESC;
+
